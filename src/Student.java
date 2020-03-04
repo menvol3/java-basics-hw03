@@ -1,24 +1,28 @@
 public class Student {
-  int rating;
+  private int rating;
   private String name;
 
-  // TODO implement Student class according to the instructions provided in the README.md file
-
-  public Student(String name) {
-    //TODO initialize name
+  public Student(String name, int rating) {
+    this.rating = rating;
+    this.name = name;
   }
 
+  public static void main(String[] args) {
+    Student student1 = new Student("Viktor", 55);
+    Student student2 = new Student("Petro" , 39);
+    Student student3 = new Student("Pavlo", 78);
+  }
   public static double getAvgRating() {
-    // TODO return average rating of all students
+
     return 0;
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public void setName(String name) {
-    // TODO set student's name
+    this.name = name;
   }
 
   public int getRating() {
@@ -26,7 +30,7 @@ public class Student {
   }
 
   public void setRating(int rating) {
-    // TODO initialize rating;
+    this.rating = rating;
   }
 
   public boolean betterStudent(Student student) {
