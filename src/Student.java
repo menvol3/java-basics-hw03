@@ -1,54 +1,60 @@
 public class Student {
-  private int rating;
-  private String name;
+    private int rating;
+    private String name;
 
-  public Student(String name, int rating) {
-    this.rating = rating;
-    this.name = name;
-  }
-
+    public static int count  = 0 ;
+    public static int countRating  = 0 ;
+    public Student(String name, int rating) {
+        this.rating = rating;
+        this.name = name;
+        count ++;
+        countRating += rating;
+    }
+    public Student() {count ++;
+    }
   public static void main(String[] args) {
-    Student student1 = new Student("Viktor", 55);
-    Student student2 = new Student("Petro" , 39);
-    Student student3 = new Student("Pavlo", 78);
-  }
-  public static double getAvgRating() {
+    Student student1 = new Student("Mykola", 15  );
+    Student student2 = new Student("Oleksandr", 5);
+    Student student3 = new Student("Alex", 50);
 
-    return 0;
   }
+    public static double getAvgRating() {
 
-  public String getName() {
-    return this.name;
-  }
+      return (double) countRating/count;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public int getRating() {
-    return rating;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setRating(int rating) {
-    this.rating = rating;
-  }
+    public int getRating() {
+        return rating;
+    }
 
-  public boolean betterStudent(Student student) {
-    // TODO return the result of comparing this.student's rating with the student's rating
-    return false;
-  }
+    public void setRating(int rating) {
+        countRating -= this.rating;
+        countRating += rating;
+        this.rating = rating;
+    }
+    public boolean betterStudent(Student student) {
+        return this.rating > student.getRating();
+    }
 
   public void changeRating(int rating) {
-    // TODO change this student's rating and average rating of all students
+     setRating(rating);
   }
 
   public static void removeStudent(Student student) {
-    // TODO remove student
-  }
+        int n = Student.count;
+        n = n - 1;
+   }
 
-  @Override
-  public String toString() {
-    // TODO return String with name and rating of this student
-    return "";
-  }
+    @Override
+    public String toString() {
+        return name + "," + rating;
+    }
 }

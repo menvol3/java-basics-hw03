@@ -14,9 +14,9 @@ public class StudentTest {
 
     assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
 
-    Student student1 = new Student("Petro");
+    Student student1 = new Student("Petro", 0);
     student1.setRating(15);
-    Student student2 = new Student("Volodymyr");
+    Student student2 = new Student("Volodymyr", 0);
     student2.setRating(30);
 
     students.add(student1);
@@ -27,7 +27,7 @@ public class StudentTest {
 
   @Test
   public void testGetName() {
-    Student student = new Student("Petro");
+    Student student = new Student("Petro", 0);
 
     students.add(student);
 
@@ -36,7 +36,7 @@ public class StudentTest {
 
   @Test
   public void testSetName() {
-    Student student = new Student("Petro");
+    Student student = new Student("Petro", 0);
     student.setName("Volodymyr");
 
     students.add(student);
@@ -46,38 +46,38 @@ public class StudentTest {
 
   @Test
   public void testGetRating() {
-    Student student1 = new Student("Volodymyr");
+    Student student1 = new Student("Volodymyr", 0);
 
     students.add(student1);
 
-    assertEquals(student1.getRating(), 0, "Student's name is wrong");
+    assertEquals(student1.getRating(), 0, "Student's rating is wrong");
 
-    Student student2 = new Student("Petro");
+    Student student2 = new Student("Petro", 0);
     student2.setRating(51);
 
     students.add(student2);
 
-    assertEquals(student2.getRating(), 51, "Student's name is wrong");
+    assertEquals(student2.getRating(), 51, "Student's rating is wrong");
   }
 
   @Test
   public void testSetRating() {
-    Student student = new Student("Volodymyr");
+    Student student = new Student("Volodymyr", 0);
     student.setRating(30);
 
     students.add(student);
 
-    assertEquals(student.getRating(), 30, "Student's name is wrong");
+    assertEquals(student.getRating(), 30, "Student's rating is wrong");
   }
 
   @Test
   public void testBetterStudent() {
-    Student student1 = new Student("Petro");
+    Student student1 = new Student("Petro", 0);
     student1.setRating(15);
 
     students.add(student1);
 
-    Student student2 = new Student("Volodymyr");
+    Student student2 = new Student("Volodymyr", 0);
     student2.setRating(30);
 
     students.add(student2);
@@ -85,12 +85,12 @@ public class StudentTest {
     assertFalse(student1.betterStudent(student2),
             student1 + " is not better than " + student2);
 
-    Student student3 = new Student("Petro");
+    Student student3 = new Student("Petro", 0);
     student3.setRating(51);
 
     students.add(student3);
 
-    Student student4 = new Student("Volodymyr");
+    Student student4 = new Student("Volodymyr", 0);
     student4.setRating(30);
 
     students.add(student4);
@@ -104,12 +104,12 @@ public class StudentTest {
 
     assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
 
-    Student student1 = new Student("Petro");
+    Student student1 = new Student("Petro", 0);
     student1.setRating(15);
 
     students.add(student1);
 
-    Student student2 = new Student("Volodymyr");
+    Student student2 = new Student("Volodymyr", 0);
     student2.setRating(30);
 
     students.add(student2);
@@ -123,7 +123,7 @@ public class StudentTest {
 
   @Test
   public void testToString() {
-    Student student = new Student("Petro");
+    Student student = new Student("Petro", 0);
     student.setRating(51);
 
     students.add(student);
