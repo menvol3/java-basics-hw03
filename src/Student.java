@@ -22,7 +22,7 @@ public class Student {
         Student student3 = new Student("Alex", 50);
 
         System.out.println(getAvgRating());
-        student1.setRating(99);
+        student1.changeRating(99);
         System.out.println(getAvgRating());
     }
 
